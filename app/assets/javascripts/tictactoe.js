@@ -12,7 +12,7 @@ const  WIN_COMBINATIONS = [
   ]
 
 function player() {
-  if (turn % 2 == 0) {
+  if (turn % 2 === 0) {
     return "X"
   } else {
     return "Y"
@@ -40,19 +40,24 @@ function checkWinner() {
 }
 
 function doTurn(element) {
-  turn++;
-
   updateState(element)
-//   if (checkWinner()) {
-//     turn = 0;
-//     td_nodes.forEach((td) => {
-//       td.innerHTML = "";
-//     });
-//    } else if (turn == 9) {
-//     setMessage("Tie game.")
-//     turn = 0;
-//     td_nodes.forEach((td) => {
-//       td.innerHTML = "";
-//     });
-//   }
+   if (checkWinner()) {
+     turn = 0;
+     td_nodes.forEach((td) => {
+       td.innerHTML = "";
+     });
+    } else if (turn == 9) {
+     setMessage("Tie game.")
+     turn = 0;
+     td_nodes.forEach((td) => {
+       td.innerHTML = "";
+     });
+   } else {
+     turn++;
+   }
 }
+
+function
+$( document ).ready(function eventListeres() {
+    console.log( "ready!" );
+});
